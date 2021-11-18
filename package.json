@@ -6,7 +6,7 @@
   "scripts": {
     "start": "node index",
     "dev": "nodemon index"
-  },
+   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/gpereira-blueedtech/catalogo_filmes.git"
@@ -23,6 +23,9 @@
   "dependencies": {
     "dotenv": "^10.0.0",
     "ejs": "^3.1.6",
-    "express": "^4.17.1"
+    "express": "^4.17.1",
+    "pg": "^8.7.1",
+    "pg-hstore": "^2.3.4",
+    "sequelize": "^6.9.0"
   }
 }
