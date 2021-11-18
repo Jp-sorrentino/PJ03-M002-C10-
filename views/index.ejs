@@ -1,62 +1,47 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="/css/style.css">
+        <link href="/img/site.ico" rel="icon" type="image/x-icon" />
+        <title>Movies</title>
+    </head>
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/css/style.css">
-    <title>Catálogo de filmes</title>
-    <link rel="icon" type="image/png" href="/img/banner.png" />
-</head>
+    <body>
+        <nav>
+            <img src="/img/movie.png" class="img" alt="site Logo">
+            <ul>
+                <li>
+                    <a href="/">Home</a>
+                </li>
+                <li>
+                    <a href="/new">New Movie</a>
+                </li>
+            </ul>
+        </nav>
 
-<body>
-    <nav>
-        <img src="/img/logo-blue.gif" class="img-fluid gif" alt="Animação Logo Blue">
-        <ul>
-            <li>
-                <a href="#">Home</a>
-            </li>
-            <li>
-                <a href="/criar">Criar</a>
-            </li>
-        </ul>
-    </nav>
+        <% if(message != "") {  %>
+            <section class="message">
+                <p><%= message %></p> <span class="close">&times;</span>
+            </section>
+        <% }  %>
 
-    <% if(message != "") {  %>
-        <section id="message">
-            <p><%= message %></p> <span id="close">&times;</span>
-        </section>
-    <% }  %>
-
-    <section id="cursos">
-        <h1 style="text-align:center">Filmes cadastrados:</h1>
-        <h3 style="text-align:center">Clique na imagem para detalhes</h3>
-        <section id="filmes">
-            <% filmes.forEach(item => { %>
-                <section class="card">
-                    <article id="content">
-                        <ul>
-                            <li>ID: <%= item.id %></li>
-                            <li>Nome: <%= item.nome %></li>
-                            <li>Descrição: <%= item.descricao %></li>
-                            <a href="/filmes/<%= item.id %>">
-                                <img src="<%= item.imagem %>" width=250>
-                            </a>
-                        </ul>
-                    </article>
-                </section>
-            <% }) %> 
-        </section>
-    </section>
-
-    <footer>
-        <p>
-            < The future is blue /> <a href="https://blueedtech.com.br/" target="_blank"> BlueEdtech</a>
-        </p>
-    </footer>
-
-    <script src="/js/script.js"></script>
-</body>
-
+        <main class="index">
+            <% filmes.forEach(movies => { %>
+                <a href="/details/<%= movies.id %>">
+                    <section class="wrapper">
+                            <article class="card_content">
+                                <img class="img" src="<%= movies.imagem %>">
+                                <p class="name"> <%= movies.nome %></p>
+                            </article>
+                    </section>
+                </a>
+            <% }) %>
+        </main>
+            
+        <script src="/js/script.js"></script>
+        
+    </body>
 </html>

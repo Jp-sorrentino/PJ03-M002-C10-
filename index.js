@@ -14,8 +14,6 @@ const Filme = require("./models/filme");
 
 const message = "";
 
-
-const Filme = require("./models/filme");
 app.get("/", async (req, res) => {
   const filmes = await Filme.findAll();
   res.render("index", {
@@ -23,7 +21,6 @@ app.get("/", async (req, res) => {
   });
 });
 
-const Filmes = require("./models/filme");
 app.get("/details/:id", async (req, res) => {
   const filme = await Filme.findByPk(req.params.id);
   res.render("details", {
@@ -31,39 +28,22 @@ app.get("/details/:id", async (req, res) => {
   });
 });
 
-// app.get("/new", (req, res) => {
-//   res.render("new");
-// });
+app.get("/new", (req, res) => {
+  res.render("new", {
+    message
+  });
+});
 
-// app.post("/new", async (req, res) => {
-//   const { nome, descricao, imagem } = req.body;
+app.post("/new", async (req, res) => {
+  const { nome, descricao, imagem } = req.body;
   
-//   const filme = await Filme.create({
-//     nome,
-//     descricao,
-//     imagem,
-//   });
-//   res.redirect("/");
-// app.get("/", async (req, res) => {
-//     const filmes = await Filme.findAll();
-//     res.render("index", {
-//       filmes, message
-//     });
-// });
-
-// // Rota para procurar os detalhes de um filme baseado no seu ID (PK)
-// app.get("/filmes/:id", async (req, res) => {
-//   const filme = await Filme.findByPk(req.params.id);
-//   res.render("detalhes", {
-//     filme,
-//   });
-// });
-
-// app.get("/criar", (req, res) => {
-//   res.render("criar", {
-//     message
-//   });
-// });
+  const filme = await Filme.create({
+    nome,
+    descricao,
+    imagem,
+  });
+  res.redirect("/");
+});
 
 
 // app.post("/criar", async (req, res) => {
