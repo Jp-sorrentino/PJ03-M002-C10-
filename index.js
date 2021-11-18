@@ -45,7 +45,6 @@ app.post("/new", async (req, res) => {
   res.redirect("/");
 });
 
-
 // app.post("/criar", async (req, res) => {
 //   const { nome, descricao, imagem } = req.body;
 
