@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="/css/style.css">
+        <link href="/img/pokebola.ico" rel="icon" type="image/x-icon" />
+        <title>Create Your Movie</title>
+    </head>
+
+    <body>
+        <nav>
+            <img src="/img/movie.png" class="img" alt="Site Logo">
+            <ul>
+                <li>
+                    <a href="/">Home</a>
+                </li>      
+            </ul>
+        </nav>
+        
+        <section class="main-class-cadastro">
+            <form method="POST">
+            
+                <section class="form-control">
+                    <label for="name">nome:</label>
+                    <input type="text" name="nome" id="name" placeholder="Movie Name" required>
+                </section>
+
+                <section class="form-control">
+                    <label for="description">descricao:</label>
+                    <input type="text" name="descricao" id="description" placeholder="Movie description" required>
+                </section>
+
+                <section class="form-control">
+                    <label for="poster">imagem:</label>
+                    <input type="text" name="imagem" id="poster" placeholder="Movie Poster" required>
+                </section>
+
+                <button type="submit" class="button">Add movie</button>
+            </form>
+        </section>
+
+        <script src="/js/script.js"></script>
+    </body>
+</html>

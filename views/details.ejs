@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="/css/style.css">
+        <link href="/img/site.ico" rel="icon" type="image/x-icon" />
+        <title>Movie Details</title>
+    </head>
+
+    <body>
+        <nav>
+            <img src="/img/movie.png" class="img" alt="site Logo">
+            <ul>
+                <li>
+                    <a href="/">Home</a>
+                </li>
+                <li>
+                    <a href="/new">New Movie</a>
+                </li>
+            </ul>
+        </nav>
+
+        <main class="index-detalhes">
+            <section class="wrapper-detalhes">
+                <article class="card_content-detalhes">
+                    <img class="img" src="<%= filme.imagem %>">
+                    <p class="name"> Name: <%= filme.nome %></p>
+                    <p class="details"> details: <%= filme.descricao %></p>
+                    <div id="buttons">
+                        <button onclick="location.href='/edit/<%= filme.id %>'" type="button">Edit</button>                        
+                        <button>Delete</button>
+                    </div>
+                </article>
+            </section>
+        </main>
+    
+        <script src="/js/script.js"></script>
+    </body>
+</html>
