@@ -82,4 +82,11 @@ app.post("/new", async (req, res) => {
 //   }
 // });
 
+app.get("/edit/:id", async (req, res) => {
+  const filme = await Filme.findByPk(req.params.id);
+  res.render("edit", {
+    filme,
+  });
+});
+
 app.listen(port, () => console.log(`Servidor rodando em http://localhost:${port}`));
