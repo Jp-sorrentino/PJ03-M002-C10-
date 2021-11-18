@@ -9,10 +9,11 @@ app.set("view engine", "ejs");
 app.use(express.static(path.join(__dirname, "public")));
 app.use(express.urlencoded());
 
+// Fazendo a conexão com o banco e recebendo o modelo do Sequelize
+const Filme = require("./models/filme");
+
 const message = "";
 
-
-const Filme = require("./models/filme");
 app.get("/", async (req, res) => {
   const filmes = await Filme.findAll();
   res.render("index", {
@@ -20,7 +21,6 @@ app.get("/", async (req, res) => {
   });
 });
 
-const Filmes = require("./models/filme");
 app.get("/details/:id", async (req, res) => {
   const filme = await Filme.findByPk(req.params.id);
   res.render("details", {
@@ -29,7 +29,9 @@ app.get("/details/:id", async (req, res) => {
 });
 
 app.get("/new", (req, res) => {
-  res.render("new");
+  res.render("new", {
+    message
+  });
 });
 
 app.post("/new", async (req, res) => {
@@ -43,4 +45,47 @@ app.post("/new", async (req, res) => {
   res.redirect("/");
 });
 
-app.listen(port, () => console.log(`Servidor rodando em http://localhost:${port}`))
+// app.post("/criar", async (req, res) => {
+//   const { nome, descricao, imagem } = req.body;
+
+//   if (!nome) {
+//     res.render("criar", {
+//       message: "Nome é obrigatório",
+//     });
+//   }
+
+//   else if (!imagem) {
+//     res.render("criar", {
+//       message: "Imagem é obrigatório",
+//     });
+//   }
+
+//   else {
+//     try {
+//       const filme = await Filme.create({
+//         nome,
+//         descricao,
+//         imagem,
+//       });
+
+//       res.render("criar", {
+//         filme, message: "Seu filme foi cadastrado!"
+//       });
+//     } catch (err) {
+//       console.log(err);
+
+//       res.render("criar", {
+//         message: "Ocorreu um erro ao cadastrar o Filme!",
+//       });
+//     }
+//   }
+// });
+
+app.get("/edit/:id", async (req, res) => {
+  const filme = await Filme.findByPk(req.params.id);
+  res.render("edit", {
+    filme,
+  });
+});
+
+app.listen(port, () => console.log(`Servidor rodando em http://localhost:${port}`));
