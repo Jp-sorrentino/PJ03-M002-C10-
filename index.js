@@ -12,7 +12,7 @@ app.use(express.urlencoded());
 // Fazendo a conexão com o banco e recebendo o modelo do Sequelize
 const Filme = require("./models/filme");
 
-const message = "";
+var message = "";
 
 app.get("/", async (req, res) => {
   const filmes = await Filme.findAll();
@@ -34,28 +34,18 @@ app.get("/new", (req, res) => {
   });
 });
 
-app.post("/new", async (req, res) => {
-  const { nome, descricao, imagem } = req.body;
-  
-  const filme = await Filme.create({
-    nome,
-    descricao,
-    imagem,
-  });
-  res.redirect("/");
-});
 
-app.post("/criar", async (req, res) => {
+app.post("/new", async (req, res) => {
   const { nome, descricao, imagem } = req.body;
 
   if (!nome) {
-    res.render("criar", {
+    res.render("new", {
       message: "Nome é obrigatório",
     });
   }
 
   else if (!imagem) {
-    res.render("criar", {
+    res.render("new", {
       message: "Imagem é obrigatório",
     });
   }
@@ -67,14 +57,16 @@ app.post("/criar", async (req, res) => {
         descricao,
         imagem,
       });
+      
+      message = "Seu filme foi cadastrado!"
 
-      res.redirect("/", {
-        filme, message: "Seu filme foi cadastrado!"
-      });
+
+      res.redirect("/");
+
     } catch (err) {
       console.log(err);
 
-      res.render("criar", {
+      res.render("new", {
         message: "Ocorreu um erro ao cadastrar o Filme!",
       });
     }
