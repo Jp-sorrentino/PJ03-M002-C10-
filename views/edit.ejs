@@ -27,17 +27,17 @@
             
                 <section class="form-control">
                     <label for="name">nome:</label>
-                    <input type="text" name="nome" id="name" placeholder="Movie Name" required>
+                    <input type="text" name="nome" id="name" placeholder="<%= filme.nome %>" required>
                 </section>
 
                 <section class="form-control">
                     <label for="description">descricao:</label>
-                    <input type="text" name="descricao" id="description" placeholder="Movie description" required>
+                    <input type="text" name="descricao" id="description" placeholder="<%= filme.descricao %>" required>
                 </section>
 
                 <section class="form-control">
                     <label for="poster">imagem:</label>
-                    <input type="text" name="imagem" id="poster" placeholder="Movie Poster" required>
+                    <input type="text" name="imagem" id="poster" placeholder="<%= filme.imagem %>" required>
                 </section>
 
                 <button type="submit" class="button">Add movie</button>
