@@ -31,11 +31,9 @@
                     <div id="buttons">
                         <button onclick="location.href='/edit/<%= filme.id %>'" type="button">Edit</button>   
 
-                        <section class="main-class-cadastro">
-                            <form action="/delete/<%= filme.id %>" method="POST">
-                                <button type="submit" class="button">Delete Movie</button>
-                            </form>
-                        </section>
+                        <form action="/delete/<%= filme.id %>" method="POST">
+                            <button type="submit" class="button">Delete Movie</button>
+                        </form>
                 
                         <!-- <button onclick="location.href='/delete/<%= filme.id %>'" type="button">Delete</button> -->
                     </div>
