@@ -286,13 +286,13 @@ left: 100%;}
   font-weight: 600;
 }
 
-.message .close {
+.message #close {
   font-size: 2rem;
   cursor: pointer;
   transition: .3s;
 }
 
-.message .close:hover{
+.message #close:hover{
   color: rgb(255, 0, 0);
   transform: scale(1.5);
 }
