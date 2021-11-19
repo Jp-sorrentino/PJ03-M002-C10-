@@ -121,7 +121,7 @@ app.post("/delete/:id", async (req, res) => {
   const filme = await Filme.findByPk(req.params.id);
 
   if (!filme) {
-    res.render("delete", {
+    res.render("index", {
       message: "Filme não encontrado!",
     });
   }
