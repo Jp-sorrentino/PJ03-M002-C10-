@@ -11,7 +11,7 @@
 
     <body>
         <nav>
-            <img src="/img/movie.png" class="img" alt="site Logo">
+            <img src="/img/movie.png" class="img" alt="Site Logo">
             <ul>
                 <li>
                     <a href="/">Home</a>
@@ -21,24 +21,29 @@
                 </li>
             </ul>
         </nav>
-
+        
         <section class="main-class-cadastro">
-            <form action="/receiveinfo" method="POST">
+            <form method="POST">
             
                 <section class="form-control">
-                    <label for="name">name:</label>
-                    <input type="text" name="name" id="name" placeholder="Movie Name" required>
+                    <label for="name">nome:</label>
+                    <input type="text" name="nome" id="name" placeholder="Movie Name" required>
                 </section>
 
                 <section class="form-control">
-                    <label for="poster">poster:</label>
-                    <input type="text" name="poster" id="poster" placeholder="Movie Poster" required>
+                    <label for="description">descricao:</label>
+                    <input type="text" name="descricao" id="description" placeholder="Movie description" required>
+                </section>
+
+                <section class="form-control">
+                    <label for="poster">imagem:</label>
+                    <input type="text" name="imagem" id="poster" placeholder="Movie Poster" required>
                 </section>
 
                 <button type="submit" class="button">Add movie</button>
             </form>
         </section>
-    
-      <script src="/js/script.js"></script>
-  </body>
+
+        <script src="/js/script.js"></script>
+    </body>
 </html>
