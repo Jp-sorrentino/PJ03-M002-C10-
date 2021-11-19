@@ -18,6 +18,11 @@
                 </li>      
             </ul>
         </nav>
+        <% if(message != "") {  %>
+            <section class="message">
+                <p><%= message %></p> <span class="close">&times;</span>
+            </section>
+        <% }  %>
         
         <section class="main-class-cadastro">
             <form method="POST">

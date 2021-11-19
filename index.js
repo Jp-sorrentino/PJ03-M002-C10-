@@ -45,41 +45,41 @@ app.post("/new", async (req, res) => {
   res.redirect("/");
 });
 
-// app.post("/criar", async (req, res) => {
-//   const { nome, descricao, imagem } = req.body;
+app.post("/criar", async (req, res) => {
+  const { nome, descricao, imagem } = req.body;
 
-//   if (!nome) {
-//     res.render("criar", {
-//       message: "Nome é obrigatório",
-//     });
-//   }
+  if (!nome) {
+    res.render("criar", {
+      message: "Nome é obrigatório",
+    });
+  }
 
-//   else if (!imagem) {
-//     res.render("criar", {
-//       message: "Imagem é obrigatório",
-//     });
-//   }
+  else if (!imagem) {
+    res.render("criar", {
+      message: "Imagem é obrigatório",
+    });
+  }
 
-//   else {
-//     try {
-//       const filme = await Filme.create({
-//         nome,
-//         descricao,
-//         imagem,
-//       });
+  else {
+    try {
+      const filme = await Filme.create({
+        nome,
+        descricao,
+        imagem,
+      });
 
-//       res.render("criar", {
-//         filme, message: "Seu filme foi cadastrado!"
-//       });
-//     } catch (err) {
-//       console.log(err);
+      res.redirect("/", {
+        filme, message: "Seu filme foi cadastrado!"
+      });
+    } catch (err) {
+      console.log(err);
 
-//       res.render("criar", {
-//         message: "Ocorreu um erro ao cadastrar o Filme!",
-//       });
-//     }
-//   }
-// });
+      res.render("criar", {
+        message: "Ocorreu um erro ao cadastrar o Filme!",
+      });
+    }
+  }
+});
 
 app.get("/edit/:id", async (req, res) => {
   const filme = await Filme.findByPk(req.params.id);
