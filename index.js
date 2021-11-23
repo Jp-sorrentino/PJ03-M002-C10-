@@ -16,9 +16,13 @@ var message = "";
 
 app.get("/", async (req, res) => {
   const filmes = await Filme.findAll();
+  setTimeout(() => {
+    message = ""
+  }, 1000)
   res.render("index", {
     filmes, message
   });
+  
 });
 
 app.get("/details/:id", async (req, res) => {
