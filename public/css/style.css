@@ -40,7 +40,7 @@ nav ul li {
 
 nav ul li a {
   text-decoration: none;
-  color: rgb(40, 218, 141);
+  color: rgb(210, 60, 105);
   font-weight: bold;
   font-size: 1.2rem;
   transition: 0.5s;
@@ -51,15 +51,22 @@ nav ul li a:hover {
 }
 
 button{
-  background-color: rgb(40, 218, 141); 
+  background-color: rgb(255, 220, 100); 
   border: none;
-  color: white;
+  color: black;
   padding: 10px 20px;
   text-align: center;
   text-decoration: none;
-  display: inline-block;
   font-size: 16px;
   transition: transform 0.5s;
+  box-shadow: rgba(0, 0, 0, 0.2) 3px 6px 10px;
+}
+
+#buttons {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding-top: 2rem;
 }
 
 button:hover{
@@ -158,11 +165,11 @@ button:hover{
 
 .wrapper-detalhes {
   background: rgb(255, 255, 255);
-  padding: .6em 1em .6em .6em;
+  padding: 1rem;
   margin-bottom: 1em;
   border-radius: .3em;
   box-shadow: rgba(0, 0, 0, 0.2) 3px 6px 10px;
-  border: solid 5px rgb(40, 218, 141);
+  border: solid 5px rgb(255, 80, 125);
 }
 
 .index-detalhes .wrapper-detalhes .card_content-detalhes {
@@ -174,6 +181,7 @@ button:hover{
   justify-content: center;
   align-items: center;
   text-align: center; 
+  font-size: larger;
 }
 
 /* Form Page */
