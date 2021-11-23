@@ -138,4 +138,8 @@ app.post("/delete/:id", async (req, res) => {
   res.redirect("/");
 });
 
+app.get("/about", (req, res) => {
+  res.render("about");
+});
+
 app.listen(port, () => console.log(`Servidor rodando em http://localhost:${port}`));
