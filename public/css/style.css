@@ -247,7 +247,6 @@ button:hover{
   margin-top: 1.5rem;
   margin-bottom: 2rem;
   outline: none;
-  border-radius: 2rem;
   border: 2px solid gold;
   background-color: darkorange;
 }
