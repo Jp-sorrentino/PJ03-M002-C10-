@@ -15,7 +15,6 @@ const Sequelize = require("sequelize");
 // });
 
 // Conectando com o DB do Heroku
-
 const sequelize = new Sequelize(process.env.DATABASE_URL, {     
   dialect: 'postgres',
   protocol: 'postgres',     
