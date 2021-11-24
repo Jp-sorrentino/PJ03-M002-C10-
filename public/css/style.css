@@ -14,6 +14,7 @@ html, body {
 
 nav {
   display: flex;
+  flex-wrap: wrap;
   align-items: left;
   justify-content: space-between;
   position: fixed;
@@ -30,7 +31,6 @@ nav .img {
 
 nav ul {
   display: flex;
-  flex-wrap: wrap;
   list-style: none;
   align-items: center;
 }
@@ -115,7 +115,9 @@ button:hover{
 }
 
 .index .wrapper .card_content .img {
-  max-height: 10em;
+  height: 20em;
+  max-width: 15em;
+  border-radius: .3em;
 }
 
 .index .wrapper .card_content .name {
@@ -173,6 +175,10 @@ button:hover{
   border-radius: .3em;
   box-shadow: rgba(0, 0, 0, 0.2) 3px 6px 10px;
   border: solid 5px rgb(255, 80, 125);
+}
+
+.wrapper-detalhes .img {
+  max-height: 10em;
 }
 
 .index-detalhes .wrapper-detalhes .card_content-detalhes {
