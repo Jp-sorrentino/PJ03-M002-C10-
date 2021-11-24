@@ -118,7 +118,7 @@ button:hover{
   display: flex;
   align-items: center;
   justify-content: center;
-  max-height: 15em;
+  max-height: 20em;
 }
 
 .index .wrapper .card_content .name {
@@ -181,7 +181,7 @@ button:hover{
 .wrapper-detalhes .img {
   display: flex;
   justify-content: center;
-  max-height: 60em;
+  max-height: 30em;
   align-items: center;
 }
 
